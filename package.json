@@ -1,15 +1,15 @@
 {
-  "name": "oclif-template",
+  "name": "@nafkhanzam/amr",
   "version": "0.0.1",
-  "description": "Freeze your dependencies in `package.json`.",
-  "author": "Moch. Nafkhan Alzamzami @nafkhanzam",
+  "description": "Abstract Meaning Representation (AMR) utilities.",
+  "author": "@nafkhanzam",
   "bin": {
     "oex": "./bin/run.js"
   },
-  "homepage": "https://github.com/nafkhanzam/oclif-template",
+  "homepage": "https://github.com/nafkhanzam/amr",
   "license": "MIT",
   "main": "dist/index.js",
-  "repository": "nafkhanzam/oclif-template",
+  "repository": "nafkhanzam/amr",
   "files": [
     "/bin",
     "/dist",
@@ -19,8 +19,7 @@
   "type": "module",
   "dependencies": {
     "@oclif/core": "1.24.0",
-    "@oclif/plugin-help": "5.1.23",
-    "@oclif/plugin-plugins": "2.1.12"
+    "@oclif/plugin-help": "5.1.23"
   },
   "devDependencies": {
     "@nafkhanzam/nz-cli": "0.0.29",
@@ -51,12 +50,11 @@
     "typescript": "4.9.4"
   },
   "oclif": {
-    "bin": "oex",
-    "dirname": "oex",
+    "bin": "amr",
+    "dirname": "amr",
     "commands": "./dist/commands",
     "plugins": [
-      "@oclif/plugin-help",
-      "@oclif/plugin-plugins"
+      "@oclif/plugin-help"
     ],
     "topicSeparator": " "
   },
@@ -71,7 +69,7 @@
   "engines": {
     "node": ">=12.0.0"
   },
-  "bugs": "https://github.com/nafkhanzam/oclif-template/issues",
+  "bugs": "https://github.com/nafkhanzam/amr/issues",
   "keywords": [
     "oclif"
   ],
