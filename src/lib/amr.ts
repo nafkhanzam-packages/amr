@@ -44,12 +44,18 @@ function processLines(lines: string[]): AMR[] {
 
 function countBacketNests(line: string): number {
   let res = 0;
+  let valid = true;
 
   for (const c of line) {
-    if (c === "(") {
-      ++res;
-    } else if (c === ")") {
-      --res;
+    if (c === `"`) {
+      valid = !valid;
+    }
+    if (valid) {
+      if (c === "(") {
+        ++res;
+      } else if (c === ")") {
+        --res;
+      }
     }
   }
 
