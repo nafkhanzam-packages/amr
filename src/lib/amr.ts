@@ -6,7 +6,7 @@ const COMMENT_REGEX = TypedRegEx(
   `((::(?<key>\\S+) +(?<value>.+?(?= ::|$)))|::(?<keyOnly>\\S+))+`,
   `g`,
 );
-const INDENT = "      ";
+const INDENT = " ".repeat(6);
 
 function processLines(lines: string[]): AMR[] {
   const amrs: AMR[] = [];
