@@ -86,7 +86,7 @@ export class AMR {
 
   public metadata: Map<string, string> = new Map();
 
-  constructor(public amr: string) {}
+  constructor(public linearizedAmr: string) {}
 
   addComment(comment: string): void {
     comment = comment.trim();
@@ -134,7 +134,7 @@ export class AMR {
 
   toAMRString(): string {
     const res: string[] = [];
-    const lines = this.amr.split(":");
+    const lines = this.linearizedAmr.split(":");
 
     let level = 0;
     for (let i = 0; i < lines.length; ++i) {
