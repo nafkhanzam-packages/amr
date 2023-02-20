@@ -25,7 +25,7 @@ function processLines(lines: string[]): AMR[] {
       }
       currComments.push(line);
     } else {
-      level += countBacketNests(line);
+      level += countBracketNests(line);
       currAMRLines.push(line);
       if (!level) {
         const amr = new AMR(currAMRLines.join(" "));
@@ -42,7 +42,7 @@ function processLines(lines: string[]): AMR[] {
   return amrs;
 }
 
-function countBacketNests(line: string): number {
+function countBracketNests(line: string): number {
   let res = 0;
   let valid = true;
 
@@ -144,7 +144,7 @@ export class AMR {
       } else {
         res.push(`${INDENT.repeat(level)}:${line}`);
       }
-      level += countBacketNests(line);
+      level += countBracketNests(line);
     }
 
     return res.join("\n");
