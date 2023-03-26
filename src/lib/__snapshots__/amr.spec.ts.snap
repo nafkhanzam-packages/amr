@@ -48,9 +48,9 @@ exports[`Input and output tests. should process LDC2020T02 input and output corr
                   :location (a2 / and
                         :op1 (c / country
                               :location (w2 / world-region
-                                    :wiki "Sub-Saharan_Africa"
+                                    :wiki "Sub:Saharan_Africa"
                                     :name (n / name
-                                          :op1 "Sub-Saharan"
+                                          :op1 "Sub:Saharan"
                                           :op2 "Africa")))
                         :op2 (a3 / area
                               :part-of (w / world)

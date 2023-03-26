@@ -8,6 +8,45 @@ const COMMENT_REGEX = TypedRegEx(
 );
 const INDENT = " ".repeat(6);
 
+function colonSplit(string: string): string[] {
+  const groupsRegex = /[^:"']+|(?:"|'){2,}|("(?!")[^"]*")|('(?!')[^']*')|"|'/g;
+
+  const matches: string[] = [];
+
+  let match;
+  let isBeforeQuotes = false;
+
+  while ((match = groupsRegex.exec(string))) {
+    if (match[2]) {
+      // Single quoted group
+      if (matches.length) {
+        matches[matches.length - 1] += match[2];
+      } else {
+        matches.push(match[2]);
+      }
+      isBeforeQuotes = true;
+    } else if (match[1]) {
+      // Double quoted group
+      if (matches.length) {
+        matches[matches.length - 1] += match[1];
+      } else {
+        matches.push(match[1]);
+      }
+      isBeforeQuotes = true;
+    } else {
+      // No quote group present
+      if (isBeforeQuotes && matches.length) {
+        matches[matches.length - 1] += match[0];
+      } else {
+        matches.push(match[0]);
+      }
+      isBeforeQuotes = false;
+    }
+  }
+
+  return matches;
+}
+
 function processLines(lines: string[]): AMR[] {
   const amrs: AMR[] = [];
 
@@ -134,7 +173,8 @@ export class AMR {
 
   toAMRString(): string {
     const res: string[] = [];
-    const lines = this.linearizedAmr.split(":");
+    const lines = colonSplit(this.linearizedAmr);
+    // const lines = this.linearizedAmr.split(":");
 
     let level = 0;
     for (let i = 0; i < lines.length; ++i) {

@@ -36,7 +36,7 @@
             :ARG1 (d / desertification
                   :location (a2 / and
                         :op1 (c / country
-                              :location (w2 / world-region :wiki "Sub-Saharan_Africa" :name (n / name :op1 "Sub-Saharan" :op2 "Africa")))
+                              :location (w2 / world-region :wiki "Sub:Saharan_Africa" :name (n / name :op1 "Sub:Saharan" :op2 "Africa")))
                         :op2 (a3 / area
                               :part-of (w / world)
                               :mod (o / other)))))
