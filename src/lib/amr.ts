@@ -9,7 +9,7 @@ const COMMENT_REGEX = TypedRegEx(
 const INDENT = " ".repeat(6);
 
 function colonSplit(string: string): string[] {
-  const groupsRegex = /[^:"']+|(?:"|'){2,}|("(?!")[^"]*")|('(?!')[^']*')|"|'/g;
+  const groupsRegex = /[^:"]+|(?:"){2,}|("(?!")[^"]*")|"/g;
 
   const matches: string[] = [];
 

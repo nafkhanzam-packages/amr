@@ -76,3 +76,8 @@
                                           :ARG3 (t / too)
                                           :ARG6 (r / redeem-01
                                                 :ARG1 (s / situation)))))))))
+
+# ::test single quotes inside double quotes
+# ::snt "'s"
+(t / test
+      :op1 "'s")

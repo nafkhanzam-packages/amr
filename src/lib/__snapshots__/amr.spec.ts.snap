@@ -99,5 +99,10 @@ exports[`Input and output tests. should process LDC2020T02 input and output corr
                                           :ARG2 (l2 / late)
                                           :ARG3 (t / too)
                                           :ARG6 (r / redeem-01
-                                                :ARG1 (s / situation)))))))))"
+                                                :ARG1 (s / situation)))))))))
+
+# ::test single quotes inside double quotes
+# ::snt "'s"
+(t / test
+      :op1 "'s")"
 `;
